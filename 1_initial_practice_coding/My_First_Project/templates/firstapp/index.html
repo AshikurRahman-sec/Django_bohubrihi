@@ -1,0 +1,49 @@
+<html>
+{% load static %}
+    <head>
+        <title> this is the home page</title>
+        <link rel="stylesheet" href= "{% static "firstapp/css/bootstrap.css" %}"
+    </head>
+
+    <body>
+        <div class="container">
+            <center><h1><label>This is the Home Page</label></h1></center>
+
+<!--            <img src="{% static "firstapp/images/mot.jpg" %}">-->
+            <div class="jumbotron">
+            <p>
+                
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+
+            </p>
+                </div>
+
+            <center><h1><label>{{text1}}</label></h1></center>
+            <center><h3><label>The Musician List</label></h3></center>
+            <table class="table">
+                      <thead class="thead-dark">
+                        <tr>
+                          <th scope="col">id</th>
+                          <th scope="col">First Name</th>
+                          <th scope="col">Last Name</th>
+                          <th scope="col">Instrument</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                      {% for row in  musician_list %}
+                        <tr>
+                          <th scope="row">{{row.id}}</th>
+                          <td>{{row.first_name}}</td>
+                          <td>{{row.last_name}}</td>
+                          <td>{{row.instrument}}</td>
+                        </tr>
+
+                      {% endfor %}
+                      </tbody>
+            </table>
+
+
+        </div>
+
+    </body>
+</html>

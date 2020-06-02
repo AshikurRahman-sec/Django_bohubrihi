@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Form Test </title>
+    <link rel="stylesheet" href= "{% static "firstapp/css/bootstrap.css" %}">
+</head>
+    <body>
+    <center> <h1> Form Test (Django Form)</h1></center>
+    <div class="jumbotron">
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                    <center> <h1> {{heading_1}}</h1></center>
+                        <form method="POST" action="/firstapp/form_process_django_form/">
+                            {% csrf_token %}
+                        <!-- you can show the form as as table as paaragraph -->
+                        {{new_form.as_p}}
+                        </br>
+                        <input type="submit" name="submit" class="btn btn-primary" value="Sign In">
+        </form>
+            </div>
+        </div>
+    </div>
+
+
+    </body>
+</html>

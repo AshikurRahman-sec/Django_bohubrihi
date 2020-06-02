@@ -1,0 +1,56 @@
+<html>
+{% load static %}
+    <head>
+        <title> this is the home page</title>
+        <link rel="stylesheet" href= "{% static 'firstapp/css/bootstrap.css' %}">
+    </head>
+
+    <body>
+
+            <center><h3><label>The Data</label></h3></center>
+            
+            <!-- check with the key for validation -->
+            {% if form_submitted %}
+                
+            <!-- make a container and show the value  -->
+            <!-- you can make a bootstrap card -->
+            <div class="card" style="width: 18rem;">
+                <div class="jumbotron">
+                <img class="card-img-top" src="{% static 'firstapp/images/mot.png' %}" width="100" height="200" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title">{{first_name}} {{last_name}}</h5>
+                  <h6 class="card-subtitle mb-2 text-muted">
+                        {% if currently_working %}
+                                    Working On a band
+                        
+                        {% else %}
+                                    Avilable for hire 
+
+                        {% endif %}
+                    
+                    </h6>
+                  <p class="card-text">
+
+                        <!-- make a unorder list -->
+                        <ul class="list-group">
+                            <li class="list-group-item active"><b> Instrument : {{ instrument }}</b></li>
+                            <li class="list-group-item"><b> First Name : {{ first_name }}</b></li>
+                            <li class="list-group-item"><b> Last Name : {{ last_name }}</b></li>
+                            <li class="list-group-item"><b> Email : {{user_email}}</b></li>
+                            <li class="list-group-item"><b> Date Of Birth : {{ date_of_birth }}</b></li>
+                            <li class="list-group-item"><b> Band : {{ band_choice }}</b></li>
+                            
+                          </ul>
+
+                  </p>
+                  <a href="/firstapp/get_form_django_form/" class="btn btn-danger">Registration Form</a>
+                  
+                </div>
+              </div>
+
+            {% endif %}
+        </div>
+        </div>
+
+    </body>
+</html>
